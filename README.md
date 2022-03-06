@@ -9,3 +9,7 @@ Scripts and plugins for c-lightning
 
 ### datalogger.py
 * plugin that saves information about `local_failed` forwards by subscribing to `forward_event`
+
+### visualize.py
+* `plot_forwards`: plugin that visualizes node data (re-implementation of [manreo's](https://github.com/manreo/lightning-datascience/tree/main/node_info) code)
+

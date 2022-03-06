@@ -2,7 +2,7 @@ import pandas as pd
 import pytest
 import time
 from pyln.testing.fixtures import *
-from dataexporter import (
+from utils import (
     get_forwards_df,
     get_invoices_df,
     get_pays_df,
@@ -12,8 +12,6 @@ from dataexporter import (
 
 plugin_path = os.path.join(os.path.dirname(__file__), "dataexporter.py")
 plugin_opt = {"plugin": plugin_path}
-
-# specify path to rebalance plugin here
 rebalance_plugin_path = (
     "/home/bitcoin/cl-plugins-available/plugins/rebalance/rebalance.py"
 )
@@ -25,6 +23,7 @@ rebalance_plugin_path = (
 )
 def test_dataexporter(network, check):
     # all tests in single method since node_factory, bitcoind are function-scoped fixtures
+
     l1 = network["l1"]
 
     # Check that dataframe functions work
